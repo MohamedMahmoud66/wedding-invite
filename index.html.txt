@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Said & Walaa Wedding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- Preview -->
+<meta property="og:title" content="Said & Walaa Wedding 💍">
+<meta property="og:description" content="June 5, 2026 • Port Said, Egypt">
+<meta property="og:image" content="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body {
+    font-family:'Poppins', sans-serif;
+    color:#fff;
+}
+
+/* HERO */
+.hero {
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero::after {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.content {
+    position:relative;
+    z-index:2;
+    animation:fade 2s ease;
+}
+
+h1 {
+    font-family:'Playfair Display', serif;
+    font-size:48px;
+}
+
+.names {
+    font-size:36px;
+    margin:15px 0;
+    color:#d4af37;
+}
+
+.date {
+    font-size:20px;
+}
+
+/* COUNTDOWN */
+.countdown {
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin:25px 0;
+}
+
+.box {
+    background:rgba(255,255,255,0.15);
+    padding:12px 15px;
+    border-radius:10px;
+}
+
+.box span {
+    font-size:22px;
+}
+
+/* BUTTON */
+.btn {
+    display:inline-block;
+    padding:12px 30px;
+    background:#d4af37;
+    color:#000;
+    text-decoration:none;
+    border-radius:30px;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.btn:hover {
+    background:#fff;
+}
+
+/* SECTION */
+.section {
+    padding:60px 20px;
+    text-align:center;
+    background:#111;
+}
+
+h2 {
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+}
+
+/* GALLERY */
+.gallery {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.gallery img {
+    width:250px;
+    border-radius:15px;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.gallery img:hover {
+    transform:scale(1.05);
+}
+
+/* ANIMATION */
+@keyframes fade {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="content">
+        <h1>We're Getting Married</h1>
+        <div class="names">Said & Walaa</div>
+        <div class="date">June 5, 2026 • Port Said, Egypt</div>
+
+        <div class="countdown">
+            <div class="box"><span id="days">00</span><br>Days</div>
+            <div class="box"><span id="hours">00</span><br>Hours</div>
+            <div class="box"><span id="minutes">00</span><br>Min</div>
+            <div class="box"><span id="seconds">00</span><br>Sec</div>
+        </div>
+
+        <a class="btn" href="https://maps.google.com/?q=Meridian+Grand+Lamor+Hall+Port+Said+Egypt" target="_blank">
+            View Location
+        </a>
+    </div>
+</div>
+
+<!-- STORY -->
+<div class="section">
+    <h2>Our Story ❤️</h2>
+    <p style="margin-bottom:30px;">From childhood memories to forever...</p>
+
+    <div class="gallery">
+        <img src="girl.jpg" alt="Walaa childhood">
+        <img src="boy.jpg" alt="Said childhood">
+    </div>
+</div>
+
+<!-- RSVP -->
+<div class="section">
+    <h2>RSVP</h2>
+    <p>We would love to celebrate with you</p>
+    <a class="btn" href="https://wa.me/201XXXXXXXXX">
+        Confirm via WhatsApp
+    </a>
+</div>
+
+<!-- SCRIPT -->
+<script>
+const weddingDate = new Date("June 5, 2026 20:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const gap = weddingDate - now;
+
+    const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+    const h = Math.floor((gap / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((gap / (1000 * 60)) % 60);
+    const s = Math.floor((gap / 1000) % 60);
+
+    document.getElementById("days").innerText = d;
+    document.getElementById("hours").innerText = h;
+    document.getElementById("minutes").innerText = m;
+    document.getElementById("seconds").innerText = s;
+}, 1000);
+</script>
+
+</body>
+</html>
